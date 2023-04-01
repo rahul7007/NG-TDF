@@ -4,25 +4,28 @@
 
 <div class="container-fluid w-50 py-5">
   <h3 class="text-center">Bootcamp Enrollment Form</h3>
-  <form>
+  
+  {{userForm.value | json}}
+  
+  <form #userForm="ngForm">
     <div class="form-group py-2">
       <label>Name</label>
-      <input type="name" class="form-control">
+      <input type="text" class="form-control" name="name" ngModel>
     </div>
 
     <div class="form-group py-2">
       <label>Email</label>
-      <input type="email" class="form-control">
+      <input type="email" class="form-control" name="email" ngModel>
     </div>
 
     <div class="form-group py-2">
       <label>Phone</label>
-      <input type="tel" class="form-control">
+      <input type="tel" class="form-control" name="phone" ngModel>
     </div>
 
     <div class="form-group py-2">
       <label>Choose one</label>
-      <select class="form-select">
+      <select class="form-select" name="topic" ngModel>
         <option selected>---I am interested in---</option>
         <option *ngFor="let topic of topics">{{ topic }}</option>
       </select>
@@ -31,17 +34,17 @@
     <div class="py-2">
       <label>Time preference</label>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="timePreference" value="morning">
+        <input class="form-check-input" type="radio" name="timePreference" value="morning" ngModel>
         <label class="form-check-label">Morning(9AM - 12PM)</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="timePreference" value="evening">
+        <input class="form-check-input" type="radio" name="timePreference" value="evening" ngModel>
         <label class="form-check-label">Evening(5PM - 8PM)</label>
       </div>
     </div>
 
     <div class="form-check py-2">
-      <input class="form-check-input" type="checkbox">
+      <input class="form-check-input" type="checkbox" name="subscription" ngModel>
       <label class="form-check-label">
         Send me promotional offers
       </label>
@@ -50,5 +53,23 @@
     <div class="row justify-content-center">
       <button class="btn btn-primary mt-5 w-50" type="submit">Submit Form</button>
     </div>
+
+    <!-- code for ngModelGroup -->
+    <!-- <div ngModelGroup="address">
+      <div class="form-group py-2">
+        <label>State</label>
+        <input type="text" class="form-control" name="state" ngModel>
+      </div>
+
+      <div class="form-group py-2">
+        <label>City</label>
+        <input type="city" class="form-control" name="city" ngModel>
+      </div>
+
+      <div class="form-group py-2">
+        <label>Pincode</label>
+        <input type="pin" class="form-control" name="pin" ngModel>
+      </div>
+    </div> -->
   </form>
 </div>

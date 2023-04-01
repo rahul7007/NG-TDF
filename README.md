@@ -41,3 +41,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # 2-Add HTML form
 
 ### Add a bootstrap form with different components
+
+# 3-Binding Data with ngForm
+
+### import FormsModule in app.module.ts
+### add a template reference variable(userForm) to the form tag to hold the ngForm directive
+#### &emsp; when we use a form tag, angular attaches an ngForm directive to the form tag which gives valuable info about that paricular form. It tells what the values of the different form contols are and wheather the values are valid or invalid. We can get the form value using *{{userForm.value | json}}*.
+#### &emsp; Add *ngModel* directive to each of the form elements. Using this we can let angular know which form controls have to be track.
+#### &emsp; Add *name* attricute to each of the form elements, as name is required along with *ngModel* directive.
+#### we'll ge the value as:
+`
+{ "name": "", "email": "", "phone": "", "topic": "", "timePreference": "", "subscription": "" }
+`
+#### &emsp; Angular also provides *ngModelGroup* directives. For example, we can create a sub group of different fields of the address in the form. *ngModelGroup="address"*. we'll ge the value as:
+`
+{ "name": "", "email": "", "phone": "", "topic": "", "timePreference": "", "subscription": "", "address": { "state": "", "city": "", "pin": "" } }
+`
