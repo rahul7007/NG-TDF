@@ -37,3 +37,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 &emsp; Copy the css CDN from https://getbootstrap.com/ and add in index.html
 &ensp; <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+
+# 2-Add HTML form
+
+### Add a bootstrap form with different components
