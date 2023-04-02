@@ -70,3 +70,23 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 #### bind userModel to enrollment form, using squeare brackets, *[ngModel]*
 #### e.g replace ngModel with *[ngModel]="userForm.name"* for the name input. After this we need to implement two way binding in order see the live update of userModel value in web, as property binding is one way binding. To implement property binding, we can use *banana in a box* syntax of the ngModel directive. *[(ngModel)]*
 #### with two way binding, we always have the model & view in sync.
+
+# 5-Tracking state and validation
+
+#### at any point in time, angular applies 3 class to a form control based on it's state:
+* The control has been visited:ng-touched(true):ng-untouched(false)
+* The control's value has changed:ng-dirty(true):ng-pristine(false)
+* The control's value is valid:ng-valid(true):ng-invalid(false)
+
+#### Although these classes can be used to provide visual feedback, angular also provides an alternativeassociative property on the ngModel directive which is better
+
+| Class  | Property  |
+|---|---|
+| ng-untouched  | untouched  |
+| ng-touched  | touched  |
+| ng-pristine  | pristine  |
+| ng-dirty  | dirty  |
+| ng-valid | valid  |
+| ng-invalid | invalid  |
+
+#### by creating a reference to the ngModel directive, we get access to the ngModel properties. For example, #name="ngModel"

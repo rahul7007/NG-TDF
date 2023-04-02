@@ -5,14 +5,16 @@
 <div class="container-fluid w-50 py-5">
   <h3 class="text-center border border-success rounded-5">Bootcamp Enrollment Form</h3>
   
-  {{userForm.value | json}}
+  <!-- {{userForm.value | json}}
   <hr />
-  {{userModel | json}}
+  {{userModel | json}} -->
+
+  {{name.touched}}
   
   <form #userForm="ngForm">
     <div class="form-group py-2">
       <label>Name</label>
-      <input type="text" class="form-control" name="name" [(ngModel)]="userModel.name">
+      <input type="text" class="form-control" name="name" [(ngModel)]="userModel.name" #name="ngModel">
     </div>
 
     <div class="form-group py-2">
