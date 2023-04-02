@@ -90,3 +90,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 | ng-invalid | invalid  |
 
 #### by creating a reference to the ngModel directive, we get access to the ngModel properties. For example, #name="ngModel"
+
+# 6-Validation with visual feedback
+#### &emsp; to apply is-invalid bootstrap class in name input when some error occurs, we can use ngModel properties coupled with class binding. e.g. `#name="ngModel" [class.is-invalid]="name.invalid && name.touched`
