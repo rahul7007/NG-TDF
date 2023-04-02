@@ -93,3 +93,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # 6-Validation with visual feedback
 #### &emsp; to apply is-invalid bootstrap class in name input when some error occurs, we can use ngModel properties coupled with class binding. e.g. `#name="ngModel" [class.is-invalid]="name.invalid && name.touched`
+
+# 7-Displaying error message
+#### we can display error message with small tag and d-none bootstrap class.
+#### for multiple validation, if we want to display different error messages, we can use the error property on the ng model. Identify the error field with *fieldname.errors*, e.g. phone.errors
