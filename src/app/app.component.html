@@ -1,32 +1,34 @@
-<div class="mx-auto p-2 border border-primary w-50">
+<div class="mx-auto p-2 border border-primary border-3 w-50">
   <h2 class="text-center">Template Driven Form</h2>
 </div>
 
 <div class="container-fluid w-50 py-5">
-  <h3 class="text-center">Bootcamp Enrollment Form</h3>
+  <h3 class="text-center border border-success rounded-5">Bootcamp Enrollment Form</h3>
   
   {{userForm.value | json}}
+  <hr />
+  {{userModel | json}}
   
   <form #userForm="ngForm">
     <div class="form-group py-2">
       <label>Name</label>
-      <input type="text" class="form-control" name="name" ngModel>
+      <input type="text" class="form-control" name="name" [(ngModel)]="userModel.name">
     </div>
 
     <div class="form-group py-2">
       <label>Email</label>
-      <input type="email" class="form-control" name="email" ngModel>
+      <input type="email" class="form-control" name="email" [(ngModel)]="userModel.email">
     </div>
 
     <div class="form-group py-2">
       <label>Phone</label>
-      <input type="tel" class="form-control" name="phone" ngModel>
+      <input type="tel" class="form-control" name="phone" [(ngModel)]="userModel.phone">
     </div>
 
     <div class="form-group py-2">
       <label>Choose one</label>
-      <select class="form-select" name="topic" ngModel>
-        <option selected>---I am interested in---</option>
+      <select class="form-select" name="topic" [(ngModel)]="userModel.topic">
+        <option value="">---I am interested in---</option>
         <option *ngFor="let topic of topics">{{ topic }}</option>
       </select>
     </div>
@@ -34,17 +36,17 @@
     <div class="py-2">
       <label>Time preference</label>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="timePreference" value="morning" ngModel>
+        <input class="form-check-input" type="radio" name="timePreference" value="morning" [(ngModel)]="userModel.timePreference">
         <label class="form-check-label">Morning(9AM - 12PM)</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="timePreference" value="evening" ngModel>
+        <input class="form-check-input" type="radio" name="timePreference" value="evening" [(ngModel)]="userModel.timePreference">
         <label class="form-check-label">Evening(5PM - 8PM)</label>
       </div>
     </div>
 
     <div class="form-check py-2">
-      <input class="form-check-input" type="checkbox" name="subscription" ngModel>
+      <input class="form-check-input" type="checkbox" name="subscribe" [(ngModel)]="userModel.subscribe">
       <label class="form-check-label">
         Send me promotional offers
       </label>

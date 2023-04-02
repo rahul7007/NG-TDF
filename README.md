@@ -57,3 +57,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `
 { "name": "", "email": "", "phone": "", "topic": "", "timePreference": "", "subscription": "", "address": { "state": "", "city": "", "pin": "" } }
 `
+
+# 4-Bind form data to a model
+
+### As users enter the form data, we'll capture the changes and update an instance of the model that can later be sent to the server.
+
+#### generate a model class inside:
+#### &emsp; ng generate class User
+#### add user model inside it.
+#### create instance of the model in app.component.ts. By having this instance of the model, it is possible to  bind the userModel data to enrollment form. Use case for this is to update the existing data.
+#### display it using {{userModel | json}}
+#### bind userModel to enrollment form, using squeare brackets, *[ngModel]*
+#### e.g replace ngModel with *[ngModel]="userForm.name"* for the name input. After this we need to implement two way binding in order see the live update of userModel value in web, as property binding is one way binding. To implement property binding, we can use *banana in a box* syntax of the ngModel directive. *[(ngModel)]*
+#### with two way binding, we always have the model & view in sync.
