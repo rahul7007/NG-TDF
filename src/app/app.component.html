@@ -11,7 +11,7 @@
 
   {{name.touched}}
   
-  <form #userForm="ngForm">
+  <form #userForm="ngForm" novalidate (ngSubmit)="submitFormData()">
     <div class="form-group py-2">
       <label>Name</label>
       <input type="text" class="form-control" name="name" required [(ngModel)]="userModel.name" #name="ngModel" [class.is-invalid]="name.invalid && name.touched">

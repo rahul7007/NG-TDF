@@ -104,3 +104,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # 9-Form level validation
 #### whenever we add a form element in html, angular automatically attaches ngForm directive to the form tag. We can get a reference to the ngForm directive with the help of template reference variable. We can disable the submit button until the form is valid. *userForm.form.valid* will be true/false based on the form data.
 #### but this will not capture custom validation, we have a custom validation in select tag. We can handle this with an event fired on submit button click or we can use topicHasError.
+
+# 10-Submitting form data
+#### adding novalidte attribute in the form tag prevents browser validation from kicking in when we click on the submit button.
+#### invoke onSubmit method and log form data
+#### to send the data to a server, we need a service. Create an enrollment service
+#### ng g s enrollment
+#### create enroll service and subscribe it from app.component.ts

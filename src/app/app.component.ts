@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EnrollmentService } from './enrollment.service';
 import { User } from './user';
 
 @Component({
@@ -11,6 +12,8 @@ export class AppComponent {
   topics = ["Angular", "React", "Vue"]
   topicHasError = true
 
+  constructor(private _enrSerive: EnrollmentService){}
+
   validateTopic(value:string){
     if(value==='default'){
       this.topicHasError = true
@@ -20,4 +23,13 @@ export class AppComponent {
   }
 
   userModel = new User('rob', 'rob@abx', '123', 'default', 'morning', true)
+
+  submitFormData(){
+    // console.log(this.userModel)
+    this._enrSerive.enroll(this.userModel)
+    .subscribe(
+      data=>console.log('success!', data),
+      error=>console.log('error', error)
+    )
+  }
 }
