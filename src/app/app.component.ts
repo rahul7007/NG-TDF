@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'tdf';
   topics = ["Angular", "React", "Vue"]
   topicHasError = true
+  errorMsg = ''
 
   constructor(private _enrSerive: EnrollmentService){}
 
@@ -29,7 +30,7 @@ export class AppComponent {
     this._enrSerive.enroll(this.userModel)
     .subscribe(
       data=>console.log('success!', data),
-      error=>console.log('error', error)
+      error=>this.errorMsg=error.statusText
     )
   }
 }

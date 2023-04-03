@@ -116,3 +116,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 #### create express server, initialize package.json, install express, body-parser, cors. Express is web server, body-parser is middleware to handle form data, cors is to communicate with different ports.
 #### create a server in server.js
 #### submit the form (invoke post endpoint) from the angular
+
+# 12-Handle error after form submission
+#### import catchError & throwError from rxjs in the service
+#### catch the error in the service. Throw the error to the component that has subscribe to the service. In the component, assign the error status message to property(errorMsg) and then bind it to html.
+#### send the error response from server.js(4XX, instead of 2XX) and see the changes.

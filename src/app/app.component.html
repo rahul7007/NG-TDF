@@ -9,7 +9,9 @@
   <hr />
   {{userModel | json}} -->
 
-  {{name.touched}}
+  <!-- {{name.touched}} -->
+
+  <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
   
   <form #userForm="ngForm" novalidate (ngSubmit)="submitFormData()">
     <div class="form-group py-2">
