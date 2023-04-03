@@ -97,3 +97,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # 7-Displaying error message
 #### we can display error message with small tag and d-none bootstrap class.
 #### for multiple validation, if we want to display different error messages, we can use the error property on the ng model. Identify the error field with *fieldname.errors*, e.g. phone.errors
+
+# 8-Custom validation added for selectbox
+#### For the *default* value of the selectbox, we have added custom validation.

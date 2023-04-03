@@ -35,10 +35,11 @@
 
     <div class="form-group py-2">
       <label>Choose one</label>
-      <select class="form-select" name="topic" [(ngModel)]="userModel.topic">
-        <option value="">---I am interested in---</option>
+      <select class="form-select" name="topic" [(ngModel)]="userModel.topic" #topic="ngModel" required [class.is-invalid]="topicHasError && topic.touched" (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)">
+        <option value="default">---I am interested in---</option>
         <option *ngFor="let topic of topics">{{ topic }}</option>
       </select>
+      <small class="text-danger" [class.d-none]="!topicHasError || topic.untouched">Please choose a topic</small>
     </div>
 
     <div class="py-2">
