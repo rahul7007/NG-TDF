@@ -111,3 +111,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 #### to send the data to a server, we need a service. Create an enrollment service
 #### ng g s enrollment
 #### create enroll service and subscribe it from app.component.ts
+
+# 11-Express server to receive form data
+#### create express server, initialize package.json, install express, body-parser, cors. Express is web server, body-parser is middleware to handle form data, cors is to communicate with different ports.
+#### create a server in server.js
+#### submit the form (invoke post endpoint) from the angular
